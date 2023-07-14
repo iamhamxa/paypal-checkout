@@ -9,7 +9,7 @@ paypal
             "Bearer 6V7rbVwmlM1gFZKW_8QtzWXqpcwQ6T5vhEGYNJDAAdn3paCgRpdeMdVYmWzgbKSsECednupJ3Zx5Xd-g",
         },
         body: JSON.stringify({
-          items: [
+          amount: [
             {
               id: 2,
             },

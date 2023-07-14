@@ -31,7 +31,7 @@ app.get("/", (req, res) => {
 
 app.post("/topup-account", async (req, res) => {
   const request = new paypal.orders.OrdersCreateRequest();
-  const total = req.body.items.reduce((sum, item) => {
+  const total = req.body.amount.reduce((sum, item) => {
     return sum + sepupBalance.get(item.id).price;
   }, 0);
   console.log(req.body);
@@ -44,15 +44,6 @@ app.post("/topup-account", async (req, res) => {
         amount: {
           currency_code: "USD",
           value: total.toString(),
-        },
-        shipping: {
-          address: {
-            address_line_1: "123 Shipping Street",
-            admin_area_2: "Shipping City",
-            admin_area_1: "Shipping State",
-            postal_code: "12345",
-            country_code: "US",
-          },
         },
       },
     ],
