@@ -29,7 +29,7 @@ app.get("/", (req, res) => {
   });
 });
 
-app.post("/create-order", async (req, res) => {
+app.post("/topup-account", async (req, res) => {
   const request = new paypal.orders.OrdersCreateRequest();
   const total = req.body.items.reduce((sum, item) => {
     return sum + sepupBalance.get(item.id).price;

@@ -1,10 +1,12 @@
 paypal
   .Buttons({
     createOrder: function () {
-      return fetch("/create-order", {
+      return fetch("/topup-account", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          Authorization:
+            "Bearer 6V7rbVwmlM1gFZKW_8QtzWXqpcwQ6T5vhEGYNJDAAdn3paCgRpdeMdVYmWzgbKSsECednupJ3Zx5Xd-g",
         },
         body: JSON.stringify({
           items: [
